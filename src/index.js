@@ -234,6 +234,8 @@ function setEventListeners(){
   return moles;
 }
 
+setEventListeners();
+
 /**
 *
 * This function sets the duration of the game. The time limit, in seconds,
