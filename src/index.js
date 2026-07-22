@@ -4,6 +4,7 @@ const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
+const sound = new Audio('../assets/alt/shot.mp3');
 
 let time = 0;
 let timer;
@@ -11,7 +12,8 @@ let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
 
-/**
+/** RANDOM INTEGER FUNCTION
+ * 
  * Generates a random integer within a range.
  *
  * The function takes two values as parameters that limits the range 
@@ -24,7 +26,9 @@ function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-/**
+
+/** SET DELAY FUNCTION
+ * 
  * Sets the time delay given a difficulty parameter.
  *
  * The function takes a `difficulty` parameter that can have three values: `easy`
@@ -50,7 +54,9 @@ function setDelay(difficulty) {
   }
 }
 
-/**
+
+/** CHOOSING HOLE FUNCTION
+ * 
  * Chooses a random hole from a list of holes.
  *
  * This function should select a random Hole from the list of holes.
@@ -75,7 +81,8 @@ function chooseHole(holes) {
   return hole;
 }
 
-/**
+
+/** GAME OVER FUNCTION
 
 * Calls the showUp function if time > 0 and stops the game if time = 0.
 *
@@ -106,7 +113,8 @@ function gameOver() {
   }
 }
 
-/**
+
+/** SHOW UP FUNCTION
 *
 * Calls the showAndHide() function with a specific delay and a hole.
 *
@@ -121,7 +129,8 @@ function showUp() {
   return showAndHide(hole, delay);
 }
 
-/**
+
+/** SHOW AND HIDE FUNCTION
 *
 * The purpose of this function is to show and hide the mole given
 * a delay time and the hole where the mole is hidden. The function calls
@@ -140,7 +149,8 @@ function showAndHide(hole, delay){
   return timeoutID;
 }
 
-/**
+
+/** TOGGLE VISIBILITY FUNCTION
 *
 * Adds or removes the 'show' class that is defined in styles.css to 
 * a given hole. It returns the hole.
@@ -152,7 +162,8 @@ function toggleVisibility(hole){
   return hole;
 }
 
-/**
+
+/** UPDATE SCORE FUNCTION
 *
 * This function increments the points global variable and updates the scoreboard.
 * Use the `points` global variable that is already defined and increment it by 1.
@@ -169,7 +180,8 @@ function updateScore() {
   return points;
 }
 
-/**
+
+/** CLEAAR SCORE FUNCTION
 *
 * This function clears the score by setting `points = 0`. It also updates
 * the board using `score.textContent = points`. The function should return
@@ -183,7 +195,8 @@ function clearScore() {
   return points;
 }
 
-/**
+
+/** UPDATE TIMER FUNCTION
 *
 * Updates the control board with the timer if time > 0
 *
@@ -197,7 +210,8 @@ function updateTimer() {
   return time;
 }
 
-/**
+
+/** START TIMER FUNCTION
 *
 * Starts the timer using setInterval. For each 1000ms (1 second)
 * the updateTimer function get called. This function is already implemented
@@ -209,9 +223,8 @@ function startTimer() {
   return timer;
 }
 
-startTimer(); // Start the timer when the game starts
 
-/**
+/** WHACK FUNCTION
 *
 * This is the event handler that gets called when a player
 * clicks on a mole. The setEventListeners should use this event
@@ -221,11 +234,14 @@ startTimer(); // Start the timer when the game starts
 */
 function whack(event) {
   // TODO: Write your code here.
+  sound.currentTime = 0; // Reset the sound to the beginning
+  sound.play();
   updateScore();
   return points;
 }
 
-/**
+
+/** SET EVENT LISTENERS FUNCTION
 *
 * Adds the 'click' event listeners to the moles. See the instructions
 * for an example on how to set event listeners using a for loop.
@@ -238,9 +254,9 @@ function setEventListeners(){
   return moles;
 }
 
-setEventListeners();
+// setEventListeners();
 
-/**
+/** SET DURATION FUNCTION
 *
 * This function sets the duration of the game. The time limit, in seconds,
 * that a player has to click on the sprites.
@@ -251,7 +267,7 @@ function setDuration(duration) {
   return time;
 }
 
-/**
+/** STOP GAME FUNCTION
 *
 * This function is called when the game is stopped. It clears the
 * timer using clearInterval. Returns "game stopped".
@@ -280,11 +296,11 @@ function stopGame(){
  * Note: Simply uncommenting `setDuration(10);` and `showUp();` is not enough. To make the game work, ensure all necessary functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
 function startGame(){
-  //clearScore();
-  //stopGame();   //optional
-  setDuration(10);
-  //setEventListeners();
-  //startTimer();
+  clearScore();
+  stopGame();   //optional
+  setDuration(20);
+  setEventListeners();
+  startTimer();
   showUp();
   return "game started";
 }
