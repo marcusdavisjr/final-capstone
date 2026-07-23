@@ -1,7 +1,10 @@
+// === VARIABLES === //
+
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
-// TODO: Add the missing query selectors:
+
+const stopButton = document.querySelector('#stop');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 const sound = new Audio('../assets/alt/shot.mp3');
@@ -12,6 +15,11 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
+
+
+
+// ===TIMING FUNCTIONS === //
+
 
 /** RANDOM INTEGER FUNCTION
  * 
@@ -26,7 +34,6 @@ let difficulty = "easy";
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 
 /** SET DELAY FUNCTION
  * 
@@ -55,15 +62,25 @@ function setDelay(difficulty) {
   }
 }
 
-/**SELECT DIFFICULTY EVENT LISTENER
+
+
+// ===DIFFICULTY SELECTOR === //
+
+
+/** SELECT DIFFICULTY EVENT LISTENER
  * 
  * This event listener listens for a change in the difficulty select element. 
  * When the user selects a different difficulty, it updates the global `difficulty` 
  * variable to the selected value.
  */
 difficultySelect.addEventListener('change', (event) => {
-    difficulty = event.target.value;
-  }); 
+  difficulty = event.target.value;
+}); 
+
+
+
+// === HOLE AND MOLE FUNCTIONS === //
+
 
 /** CHOOSING HOLE FUNCTION
  * 
@@ -91,7 +108,6 @@ function chooseHole(holes) {
   return hole;
 }
 
-
 /** GAME OVER FUNCTION
 
 * Calls the showUp function if time > 0 and stops the game if time = 0.
@@ -103,14 +119,6 @@ function chooseHole(holes) {
 * then it should call the `stopGame()` function. The function also needs to
 * return the timeoutId if the game continues or the string "game stopped"
 * if the game is over.
-*
-*  // if time > 0:
-*  //   timeoutId = showUp()
-*  //   return timeoutId
-*  // else
-*  //   gameStopped = stopGame()
-*  //   return gameStopped
-*
 */
 function gameOver() {
   // TODO: Write your code here
@@ -122,7 +130,6 @@ function gameOver() {
     return gameStopped;
   }
 }
-
 
 /** SHOW UP FUNCTION
 *
@@ -138,7 +145,6 @@ function showUp() {
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
-
 
 /** SHOW AND HIDE FUNCTION
 *
@@ -159,7 +165,6 @@ function showAndHide(hole, delay){
   return timeoutID;
 }
 
-
 /** TOGGLE VISIBILITY FUNCTION
 *
 * Adds or removes the 'show' class that is defined in styles.css to 
@@ -171,6 +176,10 @@ function toggleVisibility(hole){
   hole.classList.toggle('show');
   return hole;
 }
+
+
+
+// === SCORE AND TIMER FUNCTIONS === //
 
 
 /** UPDATE SCORE FUNCTION
@@ -190,7 +199,6 @@ function updateScore() {
   return points;
 }
 
-
 /** CLEAR SCORE FUNCTION
 *
 * This function clears the score by setting `points = 0`. It also updates
@@ -204,7 +212,6 @@ function clearScore() {
   score.textContent = points;
   return points;
 }
-
 
 /** UPDATE TIMER FUNCTION
 *
@@ -220,7 +227,6 @@ function updateTimer() {
   return time;
 }
 
-
 /** START TIMER FUNCTION
 *
 * Starts the timer using setInterval. For each 1000ms (1 second)
@@ -234,7 +240,11 @@ function startTimer() {
 }
 
 
-/** WHACK FUNCTION
+
+// === WHACK FUNCTIONS === //
+
+
+/** WHACK EVENT
 *
 * This is the event handler that gets called when a player
 * clicks on a mole. The setEventListeners should use this event
@@ -250,7 +260,6 @@ function whack(event) {
   return points;
 }
 
-
 /** SET EVENT LISTENERS FUNCTION
 *
 * Adds the 'click' event listeners to the moles. See the instructions
@@ -263,6 +272,9 @@ function setEventListeners(){
   });
   return moles;
 }
+
+
+// === GAME CONTROL FUNCTIONS === //
 
 
 /** SET DURATION FUNCTION
@@ -288,6 +300,10 @@ function stopGame(){
   return "game stopped";
 }
 
+
+
+// === START GAME FUNCTION === //
+
 /**
 * This function starts the game when the `startButton` is clicked and initializes the game by performing the following steps: 
 
@@ -301,8 +317,8 @@ function stopGame(){
 
  * 5. Begins the game loop by calling `showUp()` to display moles. 
 
-
- * Note: Simply uncommenting `setDuration(10);` and `showUp();` is not enough. To make the game work, ensure all necessary functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
+ * Note: Simply uncommenting `setDuration();` and `showUp();` is not enough. To make the game work, ensure all necessary 
+functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
 function startGame(){
   clearScore();
@@ -315,6 +331,13 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
+
+stopButton.addEventListener("click", (event) => {
+  clearScore();
+  setDuration(0);
+  stopGame();
+  return "game stopped";
+});
 
 
 // Please do not modify the code below.
