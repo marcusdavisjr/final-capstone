@@ -5,12 +5,13 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 const sound = new Audio('../assets/alt/shot.mp3');
+const difficultySelect = document.querySelector('#difficulty'); // use querySelector() to get the difficulty select element.
 
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /** RANDOM INTEGER FUNCTION
  * 
@@ -54,6 +55,15 @@ function setDelay(difficulty) {
   }
 }
 
+/**SELECT DIFFICULTY EVENT LISTENER
+ * 
+ * This event listener listens for a change in the difficulty select element. 
+ * When the user selects a different difficulty, it updates the global `difficulty` 
+ * variable to the selected value.
+ */
+difficultySelect.addEventListener('change', (event) => {
+    difficulty = event.target.value;
+  }); 
 
 /** CHOOSING HOLE FUNCTION
  * 
@@ -181,7 +191,7 @@ function updateScore() {
 }
 
 
-/** CLEAAR SCORE FUNCTION
+/** CLEAR SCORE FUNCTION
 *
 * This function clears the score by setting `points = 0`. It also updates
 * the board using `score.textContent = points`. The function should return
@@ -254,7 +264,6 @@ function setEventListeners(){
   return moles;
 }
 
-// setEventListeners();
 
 /** SET DURATION FUNCTION
 *
