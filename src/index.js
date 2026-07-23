@@ -304,7 +304,8 @@ function stopGame(){
   // stopAudio(song);  //optional
   if (isRunning === false) return;
   setStartState();
-  setDuration(0)
+  setDuration(0);
+  clearInterval(timer);
   clearScore();
   timerDisplay.textContent = 0;
   isRunning = false;
