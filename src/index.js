@@ -333,10 +333,10 @@ function startGame(){
 startButton.addEventListener("click", startGame);
 
 stopButton.addEventListener("click", (event) => {
-  clearScore();
   setDuration(0);
-  stopGame();
-  return "game stopped";
+  timerDisplay.textContent = 0;
+  clearScore();
+  return time;
 });
 
 
