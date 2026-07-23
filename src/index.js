@@ -16,9 +16,20 @@ let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
 
+// === NEW CODE HERE === //
+
+let isRunning = false;
+
+function setStartState() {
+  startButton.textContent = 'START';
+}
+
+function setStopState() {
+  startButton.textContent = 'STOP';
+}
 
 
-// ===TIMING FUNCTIONS === //
+// ===DIFFICULTY CONTROLS === //
 
 
 /** RANDOM INTEGER FUNCTION
@@ -61,11 +72,6 @@ function setDelay(difficulty) {
     return randomInteger(600, 1200);
   }
 }
-
-
-
-// ===DIFFICULTY SELECTOR === //
-
 
 /** SELECT DIFFICULTY EVENT LISTENER
  * 
@@ -296,7 +302,13 @@ function setDuration(duration) {
 */
 function stopGame(){
   // stopAudio(song);  //optional
-  clearInterval(timer);
+  if (isRunning === false) return;
+  setStartState();
+  setDuration(0)
+  clearScore();
+  timerDisplay.textContent = 0;
+  isRunning = false;
+  // return time;
   return "game stopped";
 }
 
@@ -321,23 +333,33 @@ function stopGame(){
 functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
 function startGame(){
+  if (isRunning !== false) return;
+  setStopState();
   clearScore();
-  stopGame();   //optional
   setDuration(20);
   setEventListeners();
   startTimer();
   showUp();
+  isRunning = true;
   return "game started";
 }
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", (event) => {
+  if (isRunning === false) {
+    startGame();
+  } else {
+    stopGame();
+  }
+});
 
+/**
 stopButton.addEventListener("click", (event) => {
   setDuration(0);
   timerDisplay.textContent = 0;
   clearScore();
   return time;
 });
+ */
 
 
 // Please do not modify the code below.
