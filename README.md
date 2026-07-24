@@ -7,10 +7,12 @@ A local game development studio has decided to create a new pc game that's simil
 ![botshot](assets/alt/BOT-SHOT.png)
 
 ## Project Plan
-The code for this project was built from an existing repository for a **Whack-a-mole** game. Using the repository the plan went as follows:
+The code for this project was built from an existing repository for a **Whack-a-Mole!** game. Using the repository the plan went as follows:
 
-1. Basic (Missing) Feature Requirements
+### 1) Basic (Missing) Feature Requirements
+  
 *Provide missing code to complete the following feautres*
+
 | Feature | Action Plan |
 | :--- | :--- |
 | Game title | Use `h1` tag with `title` set as `id` |
@@ -28,12 +30,38 @@ The code for this project was built from an existing repository for a **Whack-a-
 | Timer | Query selector needed in JS |
 || Use `setInterval()` and `.textContent` to start and update timer |
 
-2. Theme Overhaul 
+### 2) Functional Enchancements 
 
-3. Functional Enchancements
+*Additions to the functionality beyond the intial feature requirements* 
+
+| Feature | Action Plan |
+| :--- | :--- |
+| Difficulty selector | Add a `select` element and `.addEventListener` to control game difficulty | 
+| Button toggle | Add `stop` button state and create JS functions to switch between `start` and `stop` states |
+| Stop button | Update `stopGame()` so the `stop` button stops the game when clicked |
+
+
+### 3) Theme Overhaul
+
+*Retheme the existing **Whack-a-Mole!** styling with the new **`BOT*SHOT`** styling*
+
+| Colors |
+| :--- |
+| `#000000` |
+| `#ffffff` |
+| `#ffe591` |
+
+| Font |
+| :--- |
+| `Tomorrow` (Google Font) |
+
+**Images**
+
+![botshot-assets](assets/alt/bot-shot-images.png)
+
 
 ## Implementation Plan
-1. The code for this project was built from an existing repository for a **Whack-a-mole** game. The repo was forked and cloned to my local machine where the packages were then installed.
+1. The code for this project was built from an existing repository for a **Whack-a-Mole** game. The repo was forked and cloned to my local machine where the packages were then installed.
 2. User stories were provided within the repo outlining 
 
 To complete this project, you must do the following:
