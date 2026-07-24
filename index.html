@@ -2,16 +2,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="./src/styles.css">
+    <!-- ====== GOOGLE FONT ====== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
+    
+    <!-- ====== BACKGROUND AUDIO CONTROLS ====== -->
     <audio controls src="./assets/alt/05-reactor.mp3"></audio>
+    
+    <!-- ====== GAME TITLE ====== -->
     <h1 id="title">BOT*SHOT</h1>
+    
+    <!-- ====== GAME CONTROLS & SCOREBOARD ====== -->
     <div class="scoreboard">
+      <!--- DIFFICULTY SELECT --->
       <div>
-        <!-- <h2>Click start to play!</h2> -->
         <label for="difficulty">Choose a difficulty:</label>
         <select name="difficulty" id="difficulty">
           <option value="easy">Easy</option>
@@ -19,9 +26,11 @@
           <option value="hard">Hard</option>
         </select> 
       </div>
+      <!--- START BUTTON --->
       <div>
         <button id="start">START</button>
       </div>
+      <!--- TIMER & SCORE --->
       <div class="board-trackers">
         <div>
           <h2><span id="timer">0</span> seconds left</h2>
@@ -32,7 +41,8 @@
         </div>
       </div>
     </div>
-    <!--TODO: Make sure all holes can be viewed on smaller screens -->
+
+    <!-- ====== GAME GRID ====== -->
     <div class="grid">
       <div id="hole0" class="hole">
         <div id="mole0" class="mole"></div>
