@@ -1,5 +1,4 @@
 # BOT*SHOT
-
 A local game development studio has decided to create a new pc game that's similar to Whack-A-Mole called **BOT*SHOT**. This game takes place in the wastelands of a post-apocalyptic future where killer robots rove the outskirts of a ruined city they destroyed in years long passed. The object of the game is to shot as many as possible within the time limit as the pop in and out of vision from the rubble.
 
 *This is a browser based game developed with JavaScript, HTML, and CSS.*
@@ -9,7 +8,6 @@ A local game development studio has decided to create a new pc game that's simil
 ## Project Plan
 
 ### 1. Basic (Missing) Feature Requirements
-  
 *Provide missing code to complete the following feautures.*
 
 | Feature | Action Plan |
@@ -98,7 +96,6 @@ While testing the game on my laptop I noticed that the bottom three `holes` of t
 
 
 ## AI Tools Disclosure
-
 | AI Tool | Utility |
 | :--- | :--- |
 | Google Gemini | Used for brainstorming and trouble-shooting |
@@ -113,8 +110,21 @@ The development of **BOT*SHOT** involves converting a standard browser-based Wha
 
 ## VSCode Screenshots (Did not use Replit)
 
+![variables](./assets/screenshots/Screenshot%202026-07-24%20at%205.41.48 PM.png)
 
+![difficulty](./assets/screenshots/Screenshot%202026-07-24%20at%205.42.08 PM.png)
 
+![score](./assets/screenshots/Screenshot%202026-07-24%20at%205.44.27 PM.png)
+
+![whack](./assets/screenshots/Screenshot%202026-07-24%20at%205.44.51 PM.png)
+
+![listener](./assets/screenshots/Screenshot%202026-07-24%20at%205.45.05 PM.png)
+
+![toggle](./assets/screenshots/Screenshot%202026-07-24%20at%205.45.23 PM.png)
+
+![stop](./assets/screenshots/Screenshot%202026-07-24%20at%205.45.48 PM.png)
+
+![start](./assets/screenshots/Screenshot%202026-07-24%20at%205.46.40 PM.png)
 
 
 
