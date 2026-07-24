@@ -47,6 +47,13 @@ label {
   border: 2px solid #ffe591;
 }
 
+.board-trackers {
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  width: 100%;
+}
+
 #difficulty {
   display:flex;
   direction: column;
@@ -120,4 +127,21 @@ audio {
   bottom: 20px;
   left: 20px;
   z-index: 1000;
+}
+
+@media all and (max-height: 895px) {
+  .grid {
+    width: 500px;
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 70px;
+    margin: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin: 30px 0px;
+  }
 }
