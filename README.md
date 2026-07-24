@@ -1,12 +1,40 @@
-# Whack-a-Mole!
+# BOT*SHOT
 
-A local game development studio has decided to create a new game that's based on Whack-A-Mole. If you've ever been to an arcade, you have probably seen or played Whack-A-Mole. It's a game in which a player uses a mallet to hit toy moles, which appear at random, back into their holes.
+A local game development studio has decided to create a new pc game that's similar to Whack-A-Mole called **'BOT*SHOT'**. This game takes place in the wastelands of a post-apocalyptic future where killer robots rove the outskirts of a ruined city they destroyed in years long passed. The object of the game is to shot as many as possible within the time limit as the pop in and out of vision from the rubble.
 
-The game designers have asked you to come up with a computer version of this game. They have provided some source code, but it still needs to be completed. You are encouraged to come up with an original visual design for this game or even change the theme. The game designers expect you to use the JavaScript, HTML, and CSS skills that you've learned in this program to give the game a unique feel.
+*This is a browser based game developed with JavaScript, HTML, and CSS.*
 
-![whackamole](https://github.com/gabrielsanchez/erddiagram/blob/main/whackamole.gif?raw=true)
+![botshot](assets/alt/BOT-SHOT.png)
 
-## Steps to complete
+## Project Plan
+The code for this project was built from an existing repository for a **Whack-a-mole** game. Using the repository the plan went as follows:
+
+1. Basic (Missing) Feature Requirements
+*Provide missing code to complete the following feautres*
+| Feature | Action Plan |
+| :--- | :--- |
+| Game title | Use `h1` tag with `title` set as `id` |
+| Game play grid | Nine `div` elements |
+| Start Button | Define in HTML |
+| Difficulty Settings | Use `setDelay()` to set behavior for each difficulty |
+| Hard Difficulty | Use `randomInteger()` to set random timing for `Hard` difficulty |
+| Moles | Use `classlist.add()` and `classlist.remove()` to show and hide "moles" |
+|| Use `randomInteger()` to random select which mole is shown |
+|| `.addEventListener` on "moles" for to allow for score tracking |
+| Game Over | Provide JS function to stop game when `timer` reaches 0 |  
+| Game Start | Provide JS function to start game when `start` button is clicked |
+| Score | Use `document.querySelector` and `.textContent` to update score on "mole" click event |
+| Clear score | Use `document.querySelector` and `.textContent` to set score to zero on game restart |
+| Timer | Query selector needed in JS |
+|| Use `setInterval()` and `.textContent` to start and update timer |
+
+2. Theme Overhaul 
+
+3. Functional Enchancements
+
+## Implementation Plan
+1. The code for this project was built from an existing repository for a **Whack-a-mole** game. The repo was forked and cloned to my local machine where the packages were then installed.
+2. User stories were provided within the repo outlining 
 
 To complete this project, you must do the following:
 
