@@ -108,6 +108,9 @@ The development of **BOT*SHOT** involves converting a standard browser-based Wha
 
 ## Commit History
 
+![commits1](./assets/screenshots/Screenshot%202026-07-24%20at%206.04.09 PM.png)
+![commits2](./assets/screenshots/Screenshot%202026-07-24%20at%206.04.09 PM.png)
+
 ## VSCode Screenshots (Did not use Replit)
 
 ![variables](./assets/screenshots/Screenshot%202026-07-24%20at%205.41.48 PM.png)
