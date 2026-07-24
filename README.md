@@ -4,14 +4,13 @@ A local game development studio has decided to create a new pc game that's simil
 
 *This is a browser based game developed with JavaScript, HTML, and CSS.*
 
-![botshot](assets/alt/BOT-SHOT.png)
+![botshot](./assets/alt/BOT-SHOT.png)
 
 ## Project Plan
-The code for this project was built from an existing repository for a **Whack-a-Mole!** game. Using the repository the plan went as follows:
 
-### 1) Basic (Missing) Feature Requirements
+### 1. Basic (Missing) Feature Requirements
   
-*Provide missing code to complete the following feautres*
+*Provide missing code to complete the following feautures.*
 
 | Feature | Action Plan |
 | :--- | :--- |
@@ -30,20 +29,21 @@ The code for this project was built from an existing repository for a **Whack-a-
 | Timer | Query selector needed in JS |
 || Use `setInterval()` and `.textContent` to start and update timer |
 
-### 2) Functional Enchancements 
+### 2. Functional Enchancements 
 
-*Additions to the functionality beyond the intial feature requirements* 
+*Additions to the functionality beyond the intial feature requirements.* 
 
 | Feature | Action Plan |
 | :--- | :--- |
 | Difficulty selector | Add a `select` element and `.addEventListener` to control game difficulty | 
 | Button toggle | Add `stop` button state and create JS functions to switch between `start` and `stop` states |
 | Stop button | Update `stopGame()` so the `stop` button stops the game when clicked |
+| Laptop breakpoint | Use `@media` query resize the `gird` and `h1` for smaller viewport size |
 
 
-### 3) Theme Overhaul
+### 3. Theme Overhaul
 
-*Retheme the existing **Whack-a-Mole!** styling with the new **`BOT*SHOT`** styling*
+*Retheme the existing **Whack-a-Mole!** styling with the new **`BOT*SHOT`** styling.*
 
 | Colors |
 | :--- |
@@ -55,14 +55,29 @@ The code for this project was built from an existing repository for a **Whack-a-
 | :--- |
 | `Tomorrow` (Google Font) |
 
-**Images**
+| Audio file | Function |
+| :--- | :--- |
+| shot.mp3 | Sound effect for succesful `click` on robot set with `play()` |
+| 05-reactor.mp3 | Optional background music set with `audio` tag and  `controls` attribute |
 
-![botshot-assets](assets/alt/bot-shot-images.png)
+**Images:**
 
+![botshot-assets](./assets/alt/bot-shot-images.png)
+
+**Scoreboard:**
+
+*Add a `scoreboard` container to house controls, timer, and score for the game.*
+
+![scoreboard-wireframe](./assets/alt/scoreboard-wire.png)
 
 ## Implementation Plan
-1. The code for this project was built from an existing repository for a **Whack-a-Mole** game. The repo was forked and cloned to my local machine where the packages were then installed.
-2. User stories were provided within the repo outlining 
+1. Fork and clone the existing **Whack-a-Mole** repository to local machine and install the approprite packages.
+2. Reference User Stories in README file and use VSCode to enhance code beginning with HTML structure.
+3. Move on to address implement functionality with Javascript.
+4. Implement new theme using CSS. Create new image assets using Nano Banano, Figma, and Affinty Photo. Import new font from Google fonts. 
+5. Implement addtional enhancements once User Stories have been completed.
+6. Add audio and functions.
+7. Test the game with Jest.
 
 To complete this project, you must do the following:
 
