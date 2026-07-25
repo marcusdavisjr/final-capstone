@@ -8,7 +8,7 @@ const score = document.querySelector('#score'); // Gets the score element
 const timerDisplay = document.querySelector('#timer'); // Gets the timer element
 const difficultySelect = document.querySelector('#difficulty'); // Gets the difficulty select element
 
-const sound = new Audio('../assets/alt/shot.mp3'); // Creates a new Audio object for the sound effect
+const sound = new Audio('https://github.com/marcusdavisjr/final-capstone/blob/main/assets/alt/shot.mp3'); // Creates a new Audio object for the sound effect
 
 let time = 0;
 let timer;
